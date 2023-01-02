@@ -1,0 +1,29 @@
+# Window WSL's user: docker run -it -p 3000:3000 -v /home/node/app/node_modules -v $(pwd):/home/node/app <image id>
+
+FROM node:16-alpine
+
+USER node
+
+RUN mkdir -p /home/node/app
+WORKDIR /home/node/app
+
+COPY --chown=node:node ./package.json ./
+RUN npm install
+
+COPY --chown=node:node ./ ./
+
+CMD ["npm", "run", "start"]
+
+# Mac's user: docker run -it -p 3000:3000 -v /app/node_modules -v $(pwd):/app <image id>
+
+# FROM node:16-alpine
+
+# WORKDIR /app
+
+# COPY ./package.json ./
+
+# RUN npm install
+
+# COPY ./ ./
+
+# CMD ["npm", "run", "start"]
