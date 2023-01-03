@@ -1,5 +1,0 @@
-{
-  "yaml.schemas": {
-    "https://json.schemastore.org/github-workflow.json": "file:///d%3A/Udemy/Docker%20and%20Kubernetes%20-%20The%20Complete%20Guide/production-grade/.github/workflows/deploy.yml"
-  }
-}
