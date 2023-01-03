@@ -5,6 +5,7 @@ services:
   - docker
 
 before_install:
+  - echo -e "Host github.com\n\tHostName github.com\n\tUser git\n\tIdentityFile ~/.ssh/id_rsa\n" >> ~/.ssh/config
   - docker build -t pungrumpy/docker-react -f Dockerfile.dev .
 
 script:
