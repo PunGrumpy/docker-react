@@ -1,27 +1,8 @@
-version: '3'
+version: "3"
 services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
-      - '3000:3000'
-    volumes:
-      # Windows WSL's user
-      - /home/node/app/node_modules
-      - .:/home/node/app
-      # Mac's user
-      # - /app/node_modules
-      # - .:/app
-  tests:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    volumes:
-      # Windows WSL's user
-      - /home/node/app/node_modules
-      - .:/home/node/app
-      # Mac's user
-      # - /app/node_modules
-      # - .:/app
-    command: ['npm', 'run', 'test']
+      - "80:80"
